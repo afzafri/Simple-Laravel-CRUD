@@ -6,12 +6,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+     <a class="navbar-brand" href="#">Simple CRUD Laravel</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-		<li><a href="/" class="btn btn-default">Insert Stocks</a></li>
-		<li><a href="/view" class="btn btn-default">View Stocks</a></li>
-    <li><a href="/search" class="btn btn-default">Search Stocks</a></li>
+        <li class="active"><a href="/" >Insert Stocks</a></li>
+        <li class="active"><a href="/view" >View Stocks</a></li>
+        <li class="active"><a href="/search" >Search Stocks</a></li>
       </ul>
     </div><!--/.nav-collapse -->
 </div>
