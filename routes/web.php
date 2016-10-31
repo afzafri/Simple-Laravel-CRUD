@@ -12,15 +12,14 @@
 */
 
 //PAGES and FORMS
-//Insert form
-Route::get('/', function () {
-    return view('pages.home');
-});
 
-//search data form
-Route::get('/search', function () {
-    return view('pages.search');
-});
+Route::get('/', 'Process@indexlogin');
+
+//show view homepage form
+Route::get('/home', 'Process@homepage');
+
+//show view search bar
+Route::get('/search', 'Process@search');
 
 
 //PROCESS CONTROLLER
@@ -39,3 +38,6 @@ Route::post('/search',array('uses'=>'Process@show'));
 Route::get('/edit/{id}',array('uses'=>'Process@edit'));
 
 Route::post('/update',array('uses'=>'Process@update'));
+Auth::routes();
+
+

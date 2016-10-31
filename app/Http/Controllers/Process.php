@@ -4,11 +4,40 @@ namespace App\Http\Controllers;
 
 use App\Stock;
 use Illuminate\Http\Request;
+use Validator, Input, Redirect; 
 
 use App\Http\Requests;
 
 class Process extends Controller
 {
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    //show login form
+    public function indexlogin()
+    {
+        return redirect('login');
+    }
+
+    //show homepage
+    public function homepage()
+    {
+        return view('pages.home');
+    }
+
+    //show search page
+    public function search()
+    {
+        return view('pages.search');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,24 +68,49 @@ class Process extends Controller
      */
     public function store(Request $request)
     {
-        //insert data
+
+        //get input and store into variables
         $stype = $request->input('stype');
         $sname = $request->input('sname');
         $ssize = $request->input('ssize');
         $squantity = $request->input('squantity');
+        $file = $request->file('fileUpload');
 
+        //rules for validate
+        $rules = array(
+          'image' => 'mimes:jpeg,jpg|required|max:3000' // jpg only,max 3000kb
+        );
+
+        $fileArray = array('image' => $file);
+
+        //sent input and rules to validator
+        $validator = Validator::make($fileArray, $rules);
+
+        //create new object
         $instock = new Stock;
 
+        //set all input to insert to db
         $instock->STK_TYPE = $stype;
         $instock->STK_NAME = $sname;
         $instock->STK_SIZE = $ssize;
         $instock->STK_QTY = $squantity;
 
-        $instock->save();
+        //if validate failed, show error and return back form, else, insert data and upload file.
+        if($validator->fails())
+        {
+            echo "<script>alert('Data not inserted! Please choose correct image format.')</script>";
+            return view('pages.home');
+        }
+        else
+        {
+             //save to db
+            $instock->save();
+            //upload photo
+            $path = $file->move(public_path('/images'), $instock->STK_ID.'.jpg');
 
-        echo "<script>alert('Data inserted!')</script>";
-        return view('pages.home');
-
+            echo "<script>alert('Data inserted!')</script>";
+            return view('pages.home');
+        }
     }
 
     /**
@@ -128,6 +182,9 @@ class Process extends Controller
 
         $delstock = Stock::find($STK_ID);
         $delstock->delete();
+
+        //delete image
+        unlink(public_path("images/".$STK_ID.".jpg"));
 
         return $this->index();
     }
