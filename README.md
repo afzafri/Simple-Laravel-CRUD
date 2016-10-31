@@ -1,14 +1,13 @@
 # Simple Laravel CRUD
 Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) functions.
 
-# Purpose
-- First web application that I developed using Laravel Framework. Developed during my learning process.
-
 ### Updates
 - 31/10/2016
  - Add stock image upload
  - Create user authentication, user can now register and login
 
+# Purpose
+- First web application that I developed using Laravel Framework. Developed during my learning process.
 
 # Developed By
 - Afif - https://fb.me/afzafri
