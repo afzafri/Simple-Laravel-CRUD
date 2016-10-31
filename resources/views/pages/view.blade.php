@@ -15,6 +15,7 @@
 		        <th>ID</th>
 		        <th>TYPE</th>
 		        <th>NAME/DESCRIPTION</th>
+		        <th>STOCK IMAGE</th>
 		        <th>SIZE</th>
 		        <th>QUANTITY</th>
 		        <th>ACTION</th>
@@ -38,6 +39,7 @@
 					<td>{{$STK_ID}}</td>
 					<td>{{$STK_TYPE}}</td>
 					<td>{{$STK_NAME}}</td>
+					<td><img src='{{asset("/images/$STK_ID.jpg")}}' width="150px" height="150px" class="img-thumbnail img-responsive" title="{{$STK_NAME.' '.$STK_TYPE}}"/></td>
 					<td>{{$STK_SIZE}}</td>
 					<td>{{$STK_QTY}}</td>
 					
