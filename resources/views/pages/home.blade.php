@@ -55,10 +55,30 @@
 		
 	</div>
 	<div class="panel-footer">
-		<button type="submit" name="submit" class="btn btn-success" onclick="return confirm('Insert Data?');">Insert</button>
+		<button type="submit" name="submit" class="btn btn-success" onclick="return ask()">Insert</button>
 		<button type="reset" name="reset" class="btn btn-warning" onclick="return confirm('Reset/clear form?');">Reset</button>
 	</div>
 	</form>
 </div>
+
+<script type="text/javascript">
+	function ask()
+	{
+		$res = confirm('Insert Data?');
+
+		if($res)
+		{
+			$('.overlay').show();
+  	   		$('.sk-folding-cube').show();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+		return false;
+	}
+</script>
 
 @stop
