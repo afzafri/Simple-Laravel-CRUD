@@ -4,30 +4,31 @@ Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) function
 # Purpose
 - First web application that I developed using Laravel Framework. Developed during my learning process.
 
+### Updates
+- 31/10/2016
+ - Add stock image upload
+ - Create user authentication, user can now register and login
+
+
 # Developed By
 - Afif - https://fb.me/afzafri
 
 # Installation
-1. Download or Clone this repository
+- Download or Clone this repository
 ```
 git clone https://github.com/afzafri/Simple-Laravel-CRUD.git
 ```
-2. Create a new database name "simlara"
-3. Import "simlara.sql"
-4. Edit the file ".env" and "/config/database.php" to change the attributes to your database/phpmyadmin configurations (host,username,password etc)
-5. Open up Command Prompt(CMD) or Terminal in the project directory and run command 
+- Create a new database name "simlara"
+- Import "simlara.sql"
+- Edit the file ".env" and "/config/database.php" to change the attributes to your database/phpmyadmin configurations (host,username,password etc)
+- Open up Command Prompt(CMD) or Terminal in the project directory and run command 
 ```
 composer install
 ```
-6. Launch web server
+- Launch web server
 ```
 php artisan serve
 ```
-
-# Update
-31/10/2016
-- Add stock image upload
-- Create user authentication, user can now register and login
 
 # Credits
 - Laravel PHP Framework - https://laravel.com/docs/5.3/installation
