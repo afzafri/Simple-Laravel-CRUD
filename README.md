@@ -8,11 +8,26 @@ Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) function
 - Afif - https://fb.me/afzafri
 
 # Installation
-1. First copy whole contents into your web server, as for XAMPP is C://xampp/htdocs/simlara
+1. Download or Clone this repository
+```
+git clone https://github.com/afzafri/Simple-Laravel-CRUD.git
+```
 2. Create a new database name "simlara"
 3. Import "simlara.sql"
-4. Edit the file ".env" and /config/database.php and change the attributes to your database/phpmyadmin configurations (host,username,password etc)
-5. Open up Command Prompt(CMD) or Terminal in the "simlara" directory, and run command "php artisan serve" to launch localhost server. 
+4. Edit the file ".env" and "/config/database.php" to change the attributes to your database/phpmyadmin configurations (host,username,password etc)
+5. Open up Command Prompt(CMD) or Terminal in the project directory and run command 
+```
+composer install
+```
+6. Launch web server
+```
+php artisan serve
+```
+
+# Update
+31/10/2016
+- Add stock image upload
+- Create user authentication, user can now register and login
 
 # Credits
 - Laravel PHP Framework - https://laravel.com/docs/5.3/installation
