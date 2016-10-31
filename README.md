@@ -35,3 +35,6 @@ php artisan serve
 - Bootstrap Framework - http://getbootstrap.com/
 - jQuery Library - https://jquery.com/
 - Font Awesome - http://fontawesome.io/
+
+# License
+This library is under MIT license, please look at the `LICENSE` file
