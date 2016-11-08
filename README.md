@@ -2,8 +2,10 @@
 Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) functions.
 
 ### Updates
+- 09/11/2016
+ - Added pagination to the data results (view stock and search page)
 - 31/10/2016
- - Add stock image upload
+ - Added stock image upload
  - Create user authentication, user can now register and login
 
 # Purpose
