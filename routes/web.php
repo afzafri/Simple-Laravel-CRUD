@@ -18,10 +18,6 @@ Route::get('/', 'Process@indexlogin');
 //show view homepage form
 Route::get('/home', 'Process@homepage');
 
-//show view search bar
-Route::get('/search', 'Process@search');
-
-
 //PROCESS CONTROLLER
 //insert data
 Route::post('/',array('uses'=>'Process@store'));
@@ -33,7 +29,7 @@ Route::post('/view',array('uses'=>'Process@destroy'));
 Route::get('/view',array('uses'=>'Process@index'));
 
 //search data
-Route::post('/search',array('uses'=>'Process@show'));
+Route::get('/search',array('uses'=>'Process@show'));
 
 Route::get('/edit/{id}',array('uses'=>'Process@edit'));
 
@@ -41,3 +37,4 @@ Route::post('/update',array('uses'=>'Process@update'));
 Auth::routes();
 
 
+?>

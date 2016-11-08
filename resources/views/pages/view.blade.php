@@ -22,43 +22,29 @@
 		      </tr>
 		    </thead>
 		    <tbody>
-			
-			<?php
-
-			foreach ($liststock as $liststock) 
-			{
-				$STK_ID = $liststock->STK_ID;
-				$STK_TYPE = $liststock->STK_TYPE;
-				$STK_NAME = $liststock->STK_NAME;
-				$STK_SIZE = $liststock->STK_SIZE;
-				$STK_QTY = $liststock->STK_QTY;
-
-			
-				?>
+			<!-- iterate through the array of the stocks to display them -->
+			@foreach($liststock as $liststocks) 
 				<tr>
-					<td>{{$STK_ID}}</td>
-					<td>{{$STK_TYPE}}</td>
-					<td>{{$STK_NAME}}</td>
-					<td><img src='{{asset("/images/$STK_ID.jpg")}}' width="150px" height="150px" class="img-thumbnail img-responsive" title="{{$STK_NAME.' '.$STK_TYPE}}"/></td>
-					<td>{{$STK_SIZE}}</td>
-					<td>{{$STK_QTY}}</td>
+					<td>{{$liststocks->STK_ID}}</td>
+					<td>{{$liststocks->STK_TYPE}}</td>
+					<td>{{$liststocks->STK_NAME}}</td>
+					<td><img src='{{asset("/images/$liststocks->STK_ID.jpg")}}' width="150px" height="150px" class="img-thumbnail img-responsive" title="{{$liststocks->STK_NAME.' '.$liststocks->STK_TYPE}}"/></td>
+					<td>{{$liststocks->STK_SIZE}}</td>
+					<td>{{$liststocks->STK_QTY}}</td>
 					
 					
-					<td align="center"><a href='/edit/{{$STK_ID}}' data-toggle="tooltip" title="Update Stock" class='btn btn-success' onclick='return confirm("Edit stock?");'><i class='fa fa-fw fa-gear'></i></a>
+					<td align="center"><a href='/edit/{{$liststocks->STK_ID}}' data-toggle="tooltip" title="Update Stock" class='btn btn-success' onclick='return confirm("Edit stock?");'><i class='fa fa-fw fa-gear'></i></a>
 					<button type='submit' class='btn btn-danger' onclick='return confirm("Delete stock?");' data-toggle="tooltip" title="Delete Stock"><i class='fa fa-fw fa-trash'></i></button></td>
-					<td style='display:none;'><input type='text' name='delstock' value='{{$STK_ID}}' style='display:none;'></td>
+					<td style='display:none;'><input type='text' name='delstock' value='{{$liststocks->STK_ID}}' style='display:none;'></td>
 					<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">
 				</tr>
-
-				<?php
-
-			}
-
-			?>
-
+			@endforeach
+				
 			</tbody>
 				</table>
 				</form>
+				<!-- generate markup for pagination links -->
+				<center>{{ $liststock->links() }}</center>
 			</div>
 		</div>
 </div>

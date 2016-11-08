@@ -32,12 +32,6 @@ class Process extends Controller
         return view('pages.home');
     }
 
-    //show search page
-    public function search()
-    {
-        return view('pages.search');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +40,7 @@ class Process extends Controller
     public function index()
     {
         //list all, select *
-        $liststock = Stock::all();
+        $liststock = Stock::paginate(2); //change 2 to number of data you want to display in 1 page
         return view('pages.view',array('liststock'=>$liststock));
     }
 
@@ -121,11 +115,17 @@ class Process extends Controller
      */
     public function show(Request $request)
     {
-        //search data
-        $STK_NAME = $request->input('sname');
-        $search = Stock::where('STK_NAME','LIKE',"%$STK_NAME%")->get();
+        $STK_NAME =  $request->input('sname');
+        if($STK_NAME)
+        {
+            $search = Stock::where('STK_NAME','LIKE',"%$STK_NAME%")->paginate(2); //change 2 to number of data you want to display in 1 page
 
-        return view('pages.res',array('search'=>$search));
+        return view('pages.search',array('search'=>$search));
+        }
+        else
+        {
+            return view('pages.search');
+        }
     }
 
     /**
