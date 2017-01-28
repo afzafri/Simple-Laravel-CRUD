@@ -26,9 +26,11 @@ git clone https://github.com/afzafri/Simple-Laravel-CRUD.git
 - Create a new database
 - Copy or rename file ".env.example" to ".env", and edit the file to change the attributes for database to your database configurations (host,username,password etc)
 -  Open up Command Prompt(CMD) or Terminal in the project directory and run these commands:
- - ```composer install```
- - ```php artisan key:generate```
- - ```php artisan migrate```
+```
+composer install
+php artisan key:generate
+php artisan migrate
+```
 - Launch web server
 ```
 php artisan serve
