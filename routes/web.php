@@ -20,7 +20,7 @@ Route::get('/home', 'Process@homepage');
 
 //PROCESS CONTROLLER
 //insert data
-Route::post('/',array('uses'=>'Process@store'));
+Route::post('/home',array('uses'=>'Process@store'));
 
 //delete data
 Route::post('/view',array('uses'=>'Process@destroy'));

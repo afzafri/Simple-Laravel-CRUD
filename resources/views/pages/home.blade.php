@@ -4,7 +4,7 @@
 
 <div class="panel panel-success">
 		<div class="panel-heading">Insert Stock</div>
-		<form action="/" method="post" enctype="multipart/form-data">
+		<form action="/home" method="post" enctype="multipart/form-data">
 		<div class="panel-body">
 
 			<label class="label-control">Stock Type</label> 
