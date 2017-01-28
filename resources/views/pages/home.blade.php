@@ -4,7 +4,7 @@
 
 <div class="panel panel-success">
 		<div class="panel-heading">Insert Stock</div>
-		<form action="/home" method="post" enctype="multipart/form-data">
+		<form action="/home" method="post" enctype="multipart/form-data" onsubmit="return showLoad()">
 		{{ csrf_field() }}
 		<div class="panel-body">
 
@@ -86,22 +86,10 @@
 </div>
 
 <script type="text/javascript">
-	function ask()
+	function showLoad()
 	{
-		$res = confirm('Insert Data?');
-
-		if($res)
-		{
-			$('.overlay').show();
-  	   		$('.sk-folding-cube').show();
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
-		return false;
+		$('.overlay').show();
+  	   	$('.sk-folding-cube').show();
 	}
 </script>
 
