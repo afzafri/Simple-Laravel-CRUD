@@ -8,7 +8,7 @@
 		<div class="panel-body">
 
 		<div class='table-responsive'>
-		<form action="/view" method="post">
+		<form action="/view" method="post" onsubmit="return showLoad()">
 		  <table class='table table-bordered table-hover'>
 		    <thead>
 		      <tr>
@@ -48,5 +48,13 @@
 			</div>
 		</div>
 </div>
+
+<script type="text/javascript">
+	function showLoad()
+	{
+		$('.overlay').show();
+  	   	$('.sk-folding-cube').show();
+	}
+</script>
 
 @stop
