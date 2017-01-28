@@ -5,6 +5,7 @@
 <div class="panel panel-success">
 		<div class="panel-heading">Insert Stock</div>
 		<form action="/home" method="post" enctype="multipart/form-data">
+		{{ csrf_field() }}
 		<div class="panel-body">
 
 			<label class="label-control">Stock Type</label> 
@@ -15,10 +16,20 @@
 				<option value='Jacket'>Jacket</option>
 				<option value='Formal Shirt'>Formal Shirt</option>
 			</select>
+			@if ($errors->has('stype'))
+                <span class="help-block alert alert-danger">
+                    <strong>The Stock Type field is required.</strong>
+                </span>
+            @endif
 			<br>
 
 			<label class="label-control">Stock Name/Description</label> 
 			<input type="text" name="sname" class="form-control" placeholder="Please input stock name/description" required="required">
+			@if ($errors->has('sname'))
+                <span class="help-block alert alert-danger">
+                    <strong>The Stock Name/Description field is required.</strong>
+                </span>
+            @endif
 			<br>
 
 			<div class="row">
@@ -31,12 +42,22 @@
 						<option value='L'>L</option>
 						<option value='XL'>XL</option>
 					</select>
+					@if ($errors->has('ssize'))
+		                <span class="help-block alert alert-danger">
+		                    <strong>The Stock Size field is required.</strong>
+		                </span>
+		            @endif
 				</div>
 				
 
 				<div class="col-md-2">
 					<label class="label-control">Stock Quantity</label> 
 					<input type="number" name="squantity" class="form-control" required="required" placeholder="Insert quantity" value="0">
+					@if ($errors->has('squantity'))
+		                <span class="help-block alert alert-danger">
+		                    <strong>The Stock Quantity field is required.</strong>
+		                </span>
+		            @endif
 				</div>
 			</div>
 			<br>
@@ -47,15 +68,18 @@
 					<label class="label-control">Upload Photo</label> 
 					<input type="file" name="fileUpload" class="form-control" required="required">
 					<i>Note: Only jpg,jpeg file allowed. Max size: 3MB</i>
+					@if ($errors->has('fileUpload'))
+		                <span class="help-block alert alert-danger">
+		                    <strong>{{ $errors->first('fileUpload') }}</strong>
+		                </span>
+		            @endif
 				</div>
 			</div>
 			<br>
-
-			<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">
 		
 	</div>
 	<div class="panel-footer">
-		<button type="submit" name="submit" class="btn btn-success" onclick="return ask()">Insert</button>
+		<button type="submit" name="submit" class="btn btn-success" onclick="return confirm('Insert Data?');">Insert</button>
 		<button type="reset" name="reset" class="btn btn-warning" onclick="return confirm('Reset/clear form?');">Reset</button>
 	</div>
 	</form>
