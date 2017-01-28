@@ -61,7 +61,15 @@ class Process extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {  
+        // validate
+        $this->validate($request, [
+            'stype' => 'required',
+            'sname' => 'required',
+            'ssize' => 'required',
+            'squantity' => 'required|numeric',
+            'fileUpload' => 'mimes:jpeg,jpg|required|max:3000',
+        ]);
 
         //get input and store into variables
         $stype = $request->input('stype');
@@ -69,16 +77,6 @@ class Process extends Controller
         $ssize = $request->input('ssize');
         $squantity = $request->input('squantity');
         $file = $request->file('fileUpload');
-
-        //rules for validate
-        $rules = array(
-          'image' => 'mimes:jpeg,jpg|required|max:3000' // jpg only,max 3000kb
-        );
-
-        $fileArray = array('image' => $file);
-
-        //sent input and rules to validator
-        $validator = Validator::make($fileArray, $rules);
 
         //create new object
         $instock = new Stock;
@@ -89,22 +87,13 @@ class Process extends Controller
         $instock->STK_SIZE = $ssize;
         $instock->STK_QTY = $squantity;
 
-        //if validate failed, show error and return back form, else, insert data and upload file.
-        if($validator->fails())
-        {
-            echo "<script>alert('Data not inserted! Please choose correct image format.')</script>";
-            return view('pages.home');
-        }
-        else
-        {
-             //save to db
-            $instock->save();
-            //upload photo
-            $path = $file->move(public_path('/images'), $instock->STK_ID.'.jpg');
+        //save to db
+        $instock->save();
+        //upload photo
+        $path = $file->move(public_path('/images'), $instock->STK_ID.'.jpg');
 
-            echo "<script>alert('Data inserted!')</script>";
-            return view('pages.home');
-        }
+        return redirect("/home");
+
     }
 
     /**
