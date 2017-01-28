@@ -13,27 +13,27 @@
 
 //PAGES and FORMS
 
-Route::get('/', 'Process@indexlogin');
+Route::get('/', 'ProcessController@indexlogin');
 
 //show view homepage form
-Route::get('/home', 'Process@homepage');
+Route::get('/home', 'ProcessController@homepage');
 
 //PROCESS CONTROLLER
 //insert data
-Route::post('/home',array('uses'=>'Process@store'));
+Route::post('/home',array('uses'=>'ProcessController@store'));
 
 //delete data
-Route::post('/view',array('uses'=>'Process@destroy'));
+Route::post('/view',array('uses'=>'ProcessController@destroy'));
 
 //List all data 
-Route::get('/view',array('uses'=>'Process@index'));
+Route::get('/view',array('uses'=>'ProcessController@index'));
 
 //search data
-Route::get('/search',array('uses'=>'Process@show'));
+Route::get('/search',array('uses'=>'ProcessController@show'));
 
-Route::get('/edit/{id}',array('uses'=>'Process@edit'));
+Route::get('/edit/{id}',array('uses'=>'ProcessController@edit'));
 
-Route::post('/update',array('uses'=>'Process@update'));
+Route::post('/update',array('uses'=>'ProcessController@update'));
 Auth::routes();
 
 

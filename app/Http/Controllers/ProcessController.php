@@ -8,7 +8,7 @@ use Validator, Input, Redirect, Session;
 
 use App\Http\Requests;
 
-class Process extends Controller
+class ProcessController extends Controller
 {
      /**
      * Create a new controller instance.
