@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Stock;
 use Illuminate\Http\Request;
-use Validator, Input, Redirect; 
+use Validator, Input, Redirect, Session;
 
 use App\Http\Requests;
 
@@ -90,8 +90,9 @@ class Process extends Controller
         //save to db
         $instock->save();
         //upload photo
-        $path = $file->move(public_path('/images'), $instock->STK_ID.'.jpg');
+        $path = $file->move(public_path('/images'), $instock->id.'.jpg');
 
+        Session::flash('message', "Insert stock success!");
         return redirect("/home");
 
     }
