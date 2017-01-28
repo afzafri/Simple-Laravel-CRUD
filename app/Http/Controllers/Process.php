@@ -108,7 +108,7 @@ class Process extends Controller
         $STK_NAME =  $request->input('sname');
         if($STK_NAME)
         {
-            $search = Stock::where('STK_NAME','LIKE',"%$STK_NAME%")->paginate(2); //change 2 to number of data you want to display in 1 page
+            $search = Stock::where('stk_name','LIKE',"%$STK_NAME%")->paginate(2); //change 2 to number of data you want to display in 1 page
 
         return view('pages.search',array('search'=>$search));
         }

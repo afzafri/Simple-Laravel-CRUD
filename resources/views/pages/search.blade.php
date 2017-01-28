@@ -39,11 +39,11 @@
 
 				@foreach($search as $searchs) 
 					<tr>
-						<td>{{$searchs->STK_ID}}</td>
-						<td>{{$searchs->STK_TYPE}}</td>
-						<td>{{$searchs->STK_NAME}}</td>
-						<td>{{$searchs->STK_SIZE}}</td>
-						<td>{{$searchs->STK_QTY}}</td>
+						<td>{{$searchs->id}}</td>
+						<td>{{$searchs->stk_type}}</td>
+						<td>{{$searchs->stk_name}}</td>
+						<td>{{$searchs->stk_size}}</td>
+						<td>{{$searchs->stk_qty}}</td>
 					</tr>
 				@endforeach
 
