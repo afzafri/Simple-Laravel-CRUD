@@ -25,18 +25,18 @@
 			<!-- iterate through the array of the stocks to display them -->
 			@foreach($liststock as $liststocks) 
 				<tr>
-					<td>{{$liststocks->STK_ID}}</td>
-					<td>{{$liststocks->STK_TYPE}}</td>
-					<td>{{$liststocks->STK_NAME}}</td>
-					<td><img src='{{asset("/images/$liststocks->STK_ID.jpg")}}' width="150px" height="150px" class="img-thumbnail img-responsive" title="{{$liststocks->STK_NAME.' '.$liststocks->STK_TYPE}}"/></td>
-					<td>{{$liststocks->STK_SIZE}}</td>
-					<td>{{$liststocks->STK_QTY}}</td>
+					<td>{{$liststocks->id}}</td>
+					<td>{{$liststocks->stk_type}}</td>
+					<td>{{$liststocks->stk_name}}</td>
+					<td><img src='{{asset("/images/$liststocks->id.jpg")}}' width="150px" height="150px" class="img-thumbnail img-responsive" title="{{$liststocks->stk_name.' '.$liststocks->stk_type}}"/></td>
+					<td>{{$liststocks->stk_size}}</td>
+					<td>{{$liststocks->stk_qty}}</td>
 					
 					
-					<td align="center"><a href='/edit/{{$liststocks->STK_ID}}' data-toggle="tooltip" title="Update Stock" class='btn btn-success' onclick='return confirm("Edit stock?");'><i class='fa fa-fw fa-gear'></i></a>
+					<td align="center"><a href='/edit/{{$liststocks->id}}' data-toggle="tooltip" title="Update Stock" class='btn btn-success' onclick='return confirm("Edit stock?");'><i class='fa fa-fw fa-gear'></i></a>
 					<button type='submit' class='btn btn-danger' onclick='return confirm("Delete stock?");' data-toggle="tooltip" title="Delete Stock"><i class='fa fa-fw fa-trash'></i></button></td>
-					<td style='display:none;'><input type='text' name='delstock' value='{{$liststocks->STK_ID}}' style='display:none;'></td>
-					<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">
+					<td style='display:none;'><input type='text' name='delstock' value='{{$liststocks->id}}' style='display:none;'></td>
+					{{ csrf_field() }}
 				</tr>
 			@endforeach
 				
