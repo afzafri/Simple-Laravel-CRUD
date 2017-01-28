@@ -4,7 +4,7 @@
 
 <div class="panel panel-success">
 		<div class="panel-heading">Edit Stock</div>
-		<form action="/update" method="post">
+		<form action="/update" method="post" onsubmit="return showLoad()">
 		<div class="panel-body">
 			<label class="label-control">Stock Type</label> 
 			<select name="stype" class="form-control" required="required">
@@ -15,7 +15,7 @@
 
 				foreach($types as $types)
 				{
-					if($editstock->STK_TYPE == $types)
+					if($editstock->stk_type == $types)
 					{
 						echo "<option value='$types' selected>$types</option>";
 					}
@@ -28,7 +28,7 @@
 			</select>
 			<br>
 			<label class="label-control">Stock Name/Description</label> 
-			<input type="text" name="sname" class="form-control" placeholder="Please input stock name/description" required="required" value="{{$editstock->STK_NAME}}">
+			<input type="text" name="sname" class="form-control" placeholder="Please input stock name/description" required="required" value="{{$editstock->stk_name}}">
 			<br>
 			<div class="col-md-3">
 			<label class="label-control">Stock Size</label> 
@@ -38,7 +38,7 @@
 					$size = array('S','M','L','XL');
 					foreach($size as $size)
 					{
-						if($editstock->STK_SIZE == $size)
+						if($editstock->stk_size == $size)
 						{
 							echo "<option value='$size' selected>$size</option>";
 						}
@@ -54,11 +54,11 @@
 
 			<div class="col-md-2">
 			<label class="label-control">Stock Quantity</label> 
-			<input type="number" name="squantity" class="form-control" required="required" placeholder="Insert quantity" value="{{$editstock->STK_QTY}}">
+			<input type="number" name="squantity" class="form-control" required="required" placeholder="Insert quantity" value="{{$editstock->stk_qty}}">
 			</div>
 			<br>
-			<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">
-			<input type = "hidden" name = "sid" value = "{{$editstock->STK_ID}}">
+			{{ csrf_field() }}
+			<input type = "hidden" name = "sid" value = "{{$editstock->id}}">
 		
 	</div>
 	<div class="panel-footer">
@@ -66,5 +66,13 @@
 	</div>
 	</form>
 </div>
+
+<script type="text/javascript">
+	function showLoad()
+	{
+		$('.overlay').show();
+  	   	$('.sk-folding-cube').show();
+	}
+</script>
 
 @stop
