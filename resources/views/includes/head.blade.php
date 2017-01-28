@@ -16,20 +16,16 @@
 		$('.overlay').hide();
      	$('.sk-folding-cube').hide();
 
-	  	// Remove active for all items.
-		  $('.navbar-nav li').removeClass('active');
+     	// Remove active for all items.
+		$('.navbar-nav li').removeClass('active');
 
-		  
-		  // highlight submenu item
-		  var locations = this.location.pathname;
-		  //var newloc = "." + locations.substring(8);
-		  $('li a[href="' + locations + '"]').parent().addClass('active');
-		  //console.log(locations);
+		var url = window.location;
 
-		  if(locations == "/")
-		  {
-		    $('li a[href="/"]').parent().addClass('active');
-		  }
+		// for sidebar menu entirely but not cover treeview
+		$('ul.navbar-nav a').filter(function() {
+		  return this.href == url;
+		}).parent().addClass('active');
+		
 	 });
 	
 	
