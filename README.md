@@ -2,6 +2,10 @@
 Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) functions.
 
 ### Updates
+- 29/01/2017
+ - Now have table migration script
+ - Updates table columns in pages, to lowercase
+ - Form now will display errors and success message
 - 09/11/2016
  - Added pagination to the data results (view stock and search page)
 - 31/10/2016
@@ -19,13 +23,12 @@ Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) function
 ```
 git clone https://github.com/afzafri/Simple-Laravel-CRUD.git
 ```
-- Create a new database name "simlara"
-- Import "simlara.sql"
-- Edit the file ".env" and "/config/database.php" to change the attributes to your database/phpmyadmin configurations (host,username,password etc)
-- Open up Command Prompt(CMD) or Terminal in the project directory and run command 
-```
-composer install
-```
+- Create a new database
+- Copy or rename file ".env.example" to ".env", and edit the file to change the attributes for database to your database configurations (host,username,password etc)
+-  Open up Command Prompt(CMD) or Terminal in the project directory and run these commands:
+ - ```composer install```
+ - ```php artisan key:generate```
+ - ```php artisan migrate```
 - Launch web server
 ```
 php artisan serve
