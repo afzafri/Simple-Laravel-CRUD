@@ -54,7 +54,7 @@
 
 		</div>
 		<div class="panel-footer">
-			<a href="/search" class="btn btn-warning">Back To Search</a>
+			<a href="{{url('/search')}}" class="btn btn-warning">Reset Search</a>
 		</div>
 	</div>
 @endif
