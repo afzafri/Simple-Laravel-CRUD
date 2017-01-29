@@ -140,6 +140,15 @@ class ProcessController extends Controller
      */
     public function update(Request $request)
     {
+        // validate
+        $this->validate($request, [
+            'sid' => 'required',
+            'stype' => 'required',
+            'sname' => 'required',
+            'ssize' => 'required',
+            'squantity' => 'required|numeric',
+        ]);
+
         //update data in db
         $sid = $request->input('sid');
         $stype = $request->input('stype');
@@ -154,8 +163,9 @@ class ProcessController extends Controller
         $upstock->STK_QTY = $squantity;
 
         $upstock->save();
-        echo "<script>alert('Data updated!')</script>";
-        return $this->index();
+
+        Session::flash('message', "Data updated!");
+        return redirect("/edit/$sid");
 
     }
 

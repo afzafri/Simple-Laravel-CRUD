@@ -2,6 +2,11 @@
 
 @section('content')
 
+ <!-- display success message -->
+@if (Session::has('message'))
+   <div class="alert alert-success">{{ Session::get('message') }}</div>
+@endif
+
 <div class="panel panel-success">
 		<div class="panel-heading">Edit Stock</div>
 		<form action="/update" method="post" onsubmit="return showLoad()">
