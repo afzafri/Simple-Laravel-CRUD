@@ -6,6 +6,7 @@ Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) function
  - Now have table migration script
  - Updates table columns in pages, to lowercase
  - Form now will display errors and success message
+ - Update edit, delete, search pages.
 - 09/11/2016
  - Added pagination to the data results (view stock and search page)
 - 31/10/2016
