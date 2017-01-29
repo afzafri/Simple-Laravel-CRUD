@@ -186,6 +186,6 @@ class ProcessController extends Controller
         //delete image
         unlink(public_path("images/".$STK_ID.".jpg"));
 
-        return $this->index();
+        return redirect("/view");
     }
 }
