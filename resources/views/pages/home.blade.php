@@ -91,12 +91,6 @@
 </div>
 
 <script type="text/javascript">
-	function showLoad()
-	{
-		$('.overlay').show();
-  	   	$('.sk-folding-cube').show();
-	}
-
 	// for bootstrap file input
 	$(function(){
 		 $("input.fileinput").fileinput({

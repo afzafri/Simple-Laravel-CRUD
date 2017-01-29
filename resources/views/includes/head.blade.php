@@ -30,5 +30,11 @@
 		
 	 });
 	
+	// when called, will show loading animation
+	function showLoad()
+	{
+		$('.overlay').show();
+  	   	$('.sk-folding-cube').show();
+	}
 	
 </script>

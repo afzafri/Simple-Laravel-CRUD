@@ -4,7 +4,7 @@
 
 <div class="panel panel-success">
 		<div class="panel-heading">Search Stock</div>
-		<form action="/search" method="get">
+		<form action="/search" method="get" onsubmit="return showLoad()">
 		<div class="panel-body">
 			<label class="label-control">Stock Name</label> 
 			<input type="text" name="sname" class="form-control" placeholder="Please input stock name/description" required="required">

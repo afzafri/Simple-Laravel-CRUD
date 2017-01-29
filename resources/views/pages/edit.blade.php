@@ -92,12 +92,4 @@
 	</form>
 </div>
 
-<script type="text/javascript">
-	function showLoad()
-	{
-		$('.overlay').show();
-  	   	$('.sk-folding-cube').show();
-	}
-</script>
-
 @stop
