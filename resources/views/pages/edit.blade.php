@@ -31,9 +31,19 @@
 				}
 			?>
 			</select>
+			@if ($errors->has('stype'))
+                <span class="help-block alert alert-danger">
+                    <strong>The Stock Type field is required.</strong>
+                </span>
+            @endif
 			<br>
 			<label class="label-control">Stock Name/Description</label> 
 			<input type="text" name="sname" class="form-control" placeholder="Please input stock name/description" required="required" value="{{$editstock->stk_name}}">
+			@if ($errors->has('sname'))
+                <span class="help-block alert alert-danger">
+                    <strong>The Stock Name/Description field is required.</strong>
+                </span>
+            @endif
 			<br>
 			<div class="col-md-3">
 			<label class="label-control">Stock Size</label> 
@@ -54,12 +64,22 @@
 					}
 				?>
 			</select>
+			@if ($errors->has('ssize'))
+		                <span class="help-block alert alert-danger">
+		                    <strong>The Stock Size field is required.</strong>
+		                </span>
+		            @endif
 			</div>
 			
 
 			<div class="col-md-2">
 			<label class="label-control">Stock Quantity</label> 
 			<input type="number" name="squantity" class="form-control" required="required" placeholder="Insert quantity" value="{{$editstock->stk_qty}}">
+			@if ($errors->has('squantity'))
+		                <span class="help-block alert alert-danger">
+		                    <strong>The Stock Quantity field is required.</strong>
+		                </span>
+		            @endif
 			</div>
 			<br>
 			{{ csrf_field() }}
