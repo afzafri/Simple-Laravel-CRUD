@@ -71,7 +71,7 @@
 			<div class="row">
 				<div class="col-md-5">
 					<label class="label-control">Upload Photo</label> 
-					<input type="file" name="fileUpload" class="form-control" required="required">
+					<input type="file" name="fileUpload" class="form-control fileinput" data-show-upload="false" required="required">
 					<i>Note: Only jpg,jpeg file allowed. Max size: 3MB</i>
 					@if ($errors->has('fileUpload'))
 		                <span class="help-block alert alert-danger">
@@ -96,6 +96,14 @@
 		$('.overlay').show();
   	   	$('.sk-folding-cube').show();
 	}
+
+	// for bootstrap file input
+	$(function(){
+		 $("input.fileinput").fileinput({
+            allowedFileExtensions: ["jpg", "jpeg"], // set allowed file format
+            maxFileSize: 3000, //set file size limit, 1000 = 1MB
+        });  
+	});
 </script>
 
 @stop

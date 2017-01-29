@@ -5,8 +5,10 @@
 <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css/design.css') }}">
+<link rel="stylesheet" href="{{ asset('css/fileinput.min.css') }}">
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/fileinput.min.js')}}"></script>
 
 <script>
 
