@@ -2,6 +2,8 @@
 Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) functions.
 
 ### Updates
+- 07/02/2017
+ - Upgraded Laravel version from 5.3 to 5.4
 - 29/01/2017
  - Now have table migration script
  - Updates table columns in pages, to lowercase
