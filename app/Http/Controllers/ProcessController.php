@@ -61,7 +61,7 @@ class ProcessController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {  
+    {
         // validate
         $this->validate($request, [
             'stype' => 'required',
@@ -105,9 +105,9 @@ class ProcessController extends Controller
      */
     public function show(Request $request)
     {
-        $STK_NAME =  $request->input('sname');
-        if($STK_NAME)
+        if($request->has('sname'))
         {
+            $STK_NAME =  $request->sname;
             $search = Stock::where('stk_name','LIKE',"%$STK_NAME%")->paginate(2); //change 2 to number of data you want to display in 1 page
 
         return view('pages.search',array('search'=>$search));
