@@ -28,7 +28,7 @@
 					<td>{{$liststocks->id}}</td>
 					<td>{{$liststocks->stk_type}}</td>
 					<td>{{$liststocks->stk_name}}</td>
-					<td><img src='{{asset("/images/$liststocks->id.jpg")}}' width="150px" height="150px" class="img-thumbnail img-responsive" title="{{$liststocks->stk_name.' '.$liststocks->stk_type}}"/></td>
+					<td><img src='{{asset("storage/images/$liststocks->id.jpg")}}' width="150px" height="150px" class="img-thumbnail img-responsive" title="{{$liststocks->stk_name.' '.$liststocks->stk_type}}"/></td>
 					<td>{{$liststocks->stk_size}}</td>
 					<td>{{$liststocks->stk_qty}}</td>
 

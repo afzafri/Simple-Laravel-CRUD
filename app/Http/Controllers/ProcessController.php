@@ -90,7 +90,7 @@ class ProcessController extends Controller
         //save to db
         $instock->save();
         //upload photo
-        $path = $file->move(public_path('/images'), $instock->id.'.jpg');
+        $path = $file->storeAs('images', $instock->id.'.jpg', 'public');
 
         Session::flash('message', "Insert stock success!");
         return redirect("/home");
