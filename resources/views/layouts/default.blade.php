@@ -25,9 +25,9 @@
 
 	    <div class="collapse navbar-collapse">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="/home" >Insert Stocks</a></li>
-	        <li class="active"><a href="/view" >View Stocks</a></li>
-	        <li class="active"><a href="/search" >Search Stocks</a></li>
+	        <li {{{ (Request::is('home') ? 'class=active' : '') }}}><a href="/home" >Insert Stocks</a></li>
+	        <li {{{ (Request::is('view') ? 'class=active' : '') }}}><a href="/view" >View Stocks</a></li>
+	        <li {{{ (Request::is('search') ? 'class=active' : '') }}}><a href="/search" >Search Stocks</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="dropdown">
@@ -83,17 +83,7 @@ Simple CRUD Web App using Laravel Framework. Dev by Afif Zafri.
 
 		//hide loading animation
 		$('.overlay').hide();
-			$('.sk-folding-cube').hide();
-
-			// Remove active for all items.
-		$('.navbar-nav li').removeClass('active');
-
-		var url = window.location;
-
-		// for sidebar menu entirely but not cover treeview
-		$('ul.navbar-nav a').filter(function() {
-			return this.href == url;
-		}).parent().addClass('active');
+		$('.sk-folding-cube').hide();
 
 	 });
 
