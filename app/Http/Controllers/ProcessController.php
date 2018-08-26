@@ -72,11 +72,11 @@ class ProcessController extends Controller
         ]);
 
         //get input and store into variables
-        $stype = $request->input('stype');
-        $sname = $request->input('sname');
-        $ssize = $request->input('ssize');
-        $squantity = $request->input('squantity');
-        $file = $request->file('fileUpload');
+        $stype = $request->stype;
+        $sname = $request->sname;
+        $ssize = $request->ssize;
+        $squantity = $request->squantity;
+        $file = $request->fileUpload;
 
         //create new object
         $instock = new Stock;
@@ -150,11 +150,11 @@ class ProcessController extends Controller
         ]);
 
         //update data in db
-        $sid = $request->input('sid');
-        $stype = $request->input('stype');
-        $sname = $request->input('sname');
-        $ssize = $request->input('ssize');
-        $squantity = $request->input('squantity');
+        $sid = $request->sid;
+        $stype = $request->stype;
+        $sname = $request->sname;
+        $ssize = $request->ssize;
+        $squantity = $request->squantity;
 
         $upstock = Stock::find($sid);
         $upstock->STK_TYPE = $stype;
@@ -178,7 +178,7 @@ class ProcessController extends Controller
     public function destroy(Request $request)
     {
         //delete data
-        $STK_ID = $request->input('delstock');
+        $STK_ID = $request->delstock;
 
         $delstock = Stock::find($STK_ID);
         $delstock->delete();
