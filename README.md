@@ -2,6 +2,10 @@
 Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) functions.
 
 ### Updates
+- 26/08/2018
+ - Upgraded Laravel version from 5.4 to 5.6
+ - Fix forms styles to display errors correctly
+ - Change some codes to be more 'Laravel ways'
 - 07/02/2017
  - Upgraded Laravel version from 5.3 to 5.4
 - 29/01/2017
@@ -17,6 +21,7 @@ Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) function
 
 # Purpose
 - First web application that I developed using Laravel Framework. Developed during my learning process.
+- This project will be keep on updated during my learning process, where I will improve my Laravel knowledge.
 
 # Developed By
 - Afif - https://fb.me/afzafri
@@ -33,6 +38,7 @@ git clone https://github.com/afzafri/Simple-Laravel-CRUD.git
 composer install
 php artisan key:generate
 php artisan migrate
+php artisan storage:link
 ```
 - Launch web server
 ```
