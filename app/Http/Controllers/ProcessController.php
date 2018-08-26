@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Stock;
 use Illuminate\Http\Request;
-use Validator, Input, Redirect, Session;
+use Validator, Input, Redirect, Session, Storage;
 
 use App\Http\Requests;
 
@@ -184,7 +184,7 @@ class ProcessController extends Controller
         $delstock->delete();
 
         //delete image
-        unlink(public_path("images/".$STK_ID.".jpg"));
+        $del = Storage::disk('public')->delete("images/".$STK_ID.".jpg");
 
         return redirect("/view");
     }
