@@ -3,21 +3,21 @@ Simple Laravel Web Application with CRUD (Create, Read, Update, Delete) function
 
 ### Updates
 - 26/08/2018
- - Upgraded Laravel version from 5.4 to 5.6
- - Fix forms styles to display errors correctly
- - Change some codes to be more 'Laravel ways'
+  - Upgraded Laravel version from 5.4 to 5.6
+  - Fix forms styles to display errors correctly
+  - Change some codes to be more 'Laravel ways'
 - 07/02/2017
- - Upgraded Laravel version from 5.3 to 5.4
+  - Upgraded Laravel version from 5.3 to 5.4
 - 29/01/2017
- - Now have table migration script
- - Updates table columns in pages, to lowercase
- - Form now will display errors and success message
- - Update edit, delete, search pages.
+  - Now have table migration script
+  - Updates table columns in pages, to lowercase
+  - Form now will display errors and success message
+  - Update edit, delete, search pages.
 - 09/11/2016
- - Added pagination to the data results (view stock and search page)
+  - Added pagination to the data results (view stock and search page)
 - 31/10/2016
- - Added stock image upload
- - Create user authentication, user can now register and login
+  - Added stock image upload
+  - Create user authentication, user can now register and login
 
 # Purpose
 - First web application that I developed using Laravel Framework. Developed during my learning process.
