@@ -27,14 +27,15 @@
 		$('ul.navbar-nav a').filter(function() {
 		  return this.href == url;
 		}).parent().addClass('active');
-		
+
 	 });
-	
+
 	// when called, will show loading animation
-	function showLoad()
+	function showLoad($msg)
 	{
+		return confirm($msg);
 		$('.overlay').show();
-  	   	$('.sk-folding-cube').show();
+  	$('.sk-folding-cube').show();
 	}
-	
+
 </script>
