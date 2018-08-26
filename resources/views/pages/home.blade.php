@@ -98,14 +98,16 @@
 	</form>
 </div>
 
-<script type="text/javascript">
-	// for bootstrap file input
-	$(function(){
-		 $("input.fileinput").fileinput({
-            allowedFileExtensions: ["jpg", "jpeg"], // set allowed file format
-            maxFileSize: 3000, //set file size limit, 1000 = 1MB
-        });
-	});
-</script>
+@push('scripts')
+  <script type="text/javascript">
+  	// for bootstrap file input
+  	$(function(){
+  		 $("input.fileinput").fileinput({
+              allowedFileExtensions: ["jpg", "jpeg"], // set allowed file format
+              maxFileSize: 3000, //set file size limit, 1000 = 1MB
+          });
+  	});
+  </script>
+@endpush
 
 @stop

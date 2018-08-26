@@ -98,5 +98,7 @@ Simple CRUD Web App using Laravel Framework. Dev by Afif Zafri.
 
 </script>
 
+@stack('scripts')
+
 </body>
 </html>
